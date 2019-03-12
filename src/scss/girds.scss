@@ -1,0 +1,24 @@
+/* ----------------------------------
+	GRID 1200 - 60X15
+	one box - 380px Х 380px
+	two box - 780px X 380px
+ ---------------------------------- */
+#grid__1200_15column_colWidth60_margLR10 {
+    display: block;
+    position: fixed;
+    width: 1200px;
+    height: 100% !important;
+    left: calc(50%);
+    margin-left: -600px;
+    top: 0;
+    z-index: 1000000;
+    background: rgba(255,255,0,.1);
+}
+#grid__1200_15column_colWidth60_margLR10 span {
+    display: inline-block;
+    float: left;
+    width: 60px;
+    height: 100%;
+    margin: 0 10px;
+    background: rgba(255,0,0,.1);
+}

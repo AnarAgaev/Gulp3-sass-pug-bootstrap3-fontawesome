@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+* {
+  &::before,
+  &::after {
+    content: '';
+    position: relative;
+    display: table;
+    clear: both;
+  }
+}
+
+/* placeholder styles for input and textarea */
+             input::placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Chrome, Firefox, Opera, Safari 10.1+ */
+    input:-ms-input-placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Internet Explorer 10-11 */
+   input::-ms-input-placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Microsoft Edge */
+          textarea::placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Chrome, Firefox, Opera, Safari 10.1+ */
+ textarea:-ms-input-placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Internet Explorer 10-11 */
+textarea::-ms-input-placeholder {color: #aaa; opacity: 1; transition: opacity 0.3s ease; font-weight: 500;} /* Microsoft Edge */
+
+/* Smooth disappearance of placeholder */
+             input:focus::placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Chrome, Firefox, Opera, Safari 10.1+ */
+    input:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Internet Explorer 10-11 */
+   input:focus::-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Microsoft Edge */
+          textarea:focus::placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Chrome, Firefox, Opera, Safari 10.1+ */
+ textarea:focus:-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Internet Explorer 10-11 */
+textarea:focus::-ms-input-placeholder {opacity: 0; transition: opacity 0.3s ease;} /* Microsoft Edge */
+
+//Varibles
+$base-font-color: white;
+$base-background-color: white;
+$base-border-radius: 999px;
+
+@mixin base-transition($time: .2s) {
+  transition: all $time linear;
+}
+
+body {
+  font: normal 16px/1.2 "Arial", sans-serif;
+  color: black;
+  background-color: $base-background-color;
+}
+
+.section {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 15px;
+}
+
+.btn-default {
+  padding: 15px 50px;
+  background-color: blue;
+  color: $base-font-color;
+  float: right;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  @include base-transition(.1s);
+  &:hover {
+    background-color: lighten(blue, 10%);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
+    transform: translate(-1px, -1px);
+    color: $base-font-color;
+  }
+}
+
+header {
+  width: 100%;
+  margin: 30px 0;
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  .logo {
+    font-family: 'Roboto', sans-serif;
+    color: blue;
+    float: left;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 900;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
